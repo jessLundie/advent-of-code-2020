@@ -206,29 +206,18 @@ $array = explode("\n", $input);
 
 foreach ( $array as $key => $value ) {
 
-	$answer = stuff( $array, $key, $value);
-	if ( $answer != 0 ) break;
+	$multiple = 0;
 
-}
-
-echo "Answer is: " . $answer . PHP_EOL;
-
-
-function stuff( $array, $key, $value )
-{
-
-    $multiple = 0;
-
-    for ( $i = 0; $i < 200; $i++ ) {
-
-        $current_number = $array[$key];
+	for ($i = 0; $i < count($array); $i++ ) {
+		$current_number = $array[$key];
 
         if ($current_number + $array[$i] === 2020 && $key !== $i ) {
             $multiple = $current_number * $array[$i];
-            echo "Multiple is: " . $multiple . PHP_EOL;
+			$answer = $multiple;
         } else {
             $i++;
         }
-    }
-    return $multiple;
+	}
 }
+
+echo "Answer is: " . $answer . PHP_EOL;
