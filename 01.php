@@ -204,20 +204,19 @@ $input = "1293
 
 $array = explode("\n", $input);
 
-foreach ( $array as $key => $value ) {
+$multiple = 0;
 
-	$multiple = 0;
+foreach ( $array as $key => $value ) {
 
 	for ($i = 0; $i < count($array); $i++ ) {
 		$current_number = $array[$key];
 
         if ($current_number + $array[$i] === 2020 && $key !== $i ) {
             $multiple = $current_number * $array[$i];
-			$answer = $multiple;
         } else {
             $i++;
         }
 	}
 }
 
-echo "Answer is: " . $answer . PHP_EOL;
+echo "Answer is: " . $multiple . PHP_EOL;
