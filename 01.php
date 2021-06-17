@@ -213,6 +213,7 @@ foreach ( $array as $key => $value ) {
 
         if ($current_number + $array[$i] === 2020 && $key !== $i ) {
             $multiple = $current_number * $array[$i];
+			break;
         } else {
             $i++;
         }
