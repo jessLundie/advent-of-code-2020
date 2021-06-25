@@ -204,20 +204,29 @@ $input = "1293
 
 $array = explode("\n", $input);
 
-$multiple = 0;
 
-foreach ( $array as $key => $value ) {
 
-	for ($i = 0; $i < count($array); $i++ ) {
-		$current_number = $array[$key];
+function find_answer( $array ) {
 
-        if ($current_number + $array[$i] === 2020 && $key !== $i ) {
-            $multiple = $current_number * $array[$i];
-			break;
-        } else {
-            $i++;
-        }
+	$multiple = 0;
+
+	foreach ( $array as $key => $value ) {
+
+		for ($i = 0; $i < count($array); $i++ ) {
+			$current_number = $array[$key];
+
+	        if ($current_number + $array[$i] === 2020 && $key !== $i ) {
+				//echo $key . "->" . $current_number . PHP_EOL . $i . "->" . $array[$i] . PHP_EOL;
+				$multiple = $current_number * $array[$i];
+				return $multiple;
+	        } else {
+				echo $key . "->" . $current_number . PHP_EOL . $i . "->" . $array[$i] . PHP_EOL;
+	            $i++;
+	        }
+		}
 	}
 }
 
-echo "Answer is: " . $multiple . PHP_EOL;
+$answer = find_answer( $array );
+
+echo "Answer is: " . $answer . PHP_EOL;
