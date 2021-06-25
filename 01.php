@@ -205,7 +205,6 @@ $input = "1293
 $array = explode("\n", $input);
 
 
-
 function find_answer( $array ) {
 
 	$multiple = 0;
@@ -216,12 +215,8 @@ function find_answer( $array ) {
 			$current_number = $array[$key];
 
 	        if ($current_number + $array[$i] === 2020 && $key !== $i ) {
-				//echo $key . "->" . $current_number . PHP_EOL . $i . "->" . $array[$i] . PHP_EOL;
 				$multiple = $current_number * $array[$i];
 				return $multiple;
-	        } else {
-				echo $key . "->" . $current_number . PHP_EOL . $i . "->" . $array[$i] . PHP_EOL;
-	            $i++;
 	        }
 		}
 	}
